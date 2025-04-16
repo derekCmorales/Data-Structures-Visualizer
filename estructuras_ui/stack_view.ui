@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PilaVisual</class>
+ <widget class="QWidget" name="PilaVisual">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>709</width>
+    <height>295</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Stack | Pila</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QPushButton" name="btn_regresar">
+       <property name="minimumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Regresar al dashboard</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    qproperty-icon: url(resources/back_arrow.png);
+    qproperty-iconSize: 24px 24px;
+}
+QPushButton:hover {
+    background-color: #e0e0e0;
+    border-radius: 16px;
+}
+QPushButton:pressed {
+    background-color: #c0c0c0;
+    border-radius: 16px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_title">
+       <property name="styleSheet">
+        <string notr="true">font-size: 25px; font-weight: bold; color: #2e3e97;
+  text-align: center;
+  border: 3px cyan;</string>
+       </property>
+       <property name="text">
+        <string>Stack | Pila</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_tamaño">
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 15px; font-weight: bold; color: #6fb5e5;</string>
+     </property>
+     <property name="text">
+      <string>Tamaño: 0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="input_valor">
+     <property name="styleSheet">
+      <string notr="true"> color: black;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Ingrese valor</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="botonesLayout">
+     <item>
+      <widget class="QPushButton" name="btn_insertar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 17px
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Insertar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_eliminar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 17px
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Eliminar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_buscar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 17px
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Buscar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">background-color: #8fbad8; color: white</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="pilaContainer">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>683</width>
+        <height>142</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="layoutPila"/>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

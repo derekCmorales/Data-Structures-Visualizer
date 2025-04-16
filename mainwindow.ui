@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>958</width>
-    <height>678</height>
+    <width>651</width>
+    <height>646</height>
    </rect>
   </property>
   <property name="palette">
@@ -486,8 +486,11 @@
    <string notr="true">background-color: white;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="mainLayout">
-    <item>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <widget class="QLabel" name="labelLogo">
       <property name="pixmap">
        <pixmap>resources/logo.png</pixmap>
@@ -497,7 +500,7 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
      <widget class="QLabel" name="labelTitulo">
       <property name="styleSheet">
        <string notr="true">font-size: 25px; font-weight: bold; color: #2e3e97</string>
@@ -510,31 +513,8 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="2" column="0">
      <layout class="QGridLayout" name="gridLayoutBotones">
-      <item row="0" column="1">
-       <widget class="QPushButton" name="btnListaSimple">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
-    background-color: transparent;
-	font-weight: bold;
-	font-size: 20px
-}
-QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
-}
-QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Lista Simple</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QPushButton" name="btnArbolBinario">
         <property name="styleSheet">
@@ -543,7 +523,8 @@ QPushButton:pressed {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 20px
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
@@ -558,7 +539,7 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="1" column="2">
        <widget class="QPushButton" name="btnListaCircular">
         <property name="styleSheet">
          <string notr="true">QPushButton {
@@ -566,7 +547,8 @@ QPushButton:pressed {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 20px
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
@@ -581,6 +563,54 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btnListaDoble">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Lista Doble</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="btnListaSimple">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Lista Simple</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QPushButton" name="btnPila">
         <property name="styleSheet">
@@ -589,7 +619,8 @@ QPushButton:pressed {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 20px
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
@@ -597,8 +628,6 @@ QPushButton:hover {
 QPushButton:pressed {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
 }
-
-
 </string>
         </property>
         <property name="text">
@@ -606,7 +635,7 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="2" column="2">
        <widget class="QPushButton" name="btnArbolBusqueda">
         <property name="styleSheet">
          <string notr="true">QPushButton {
@@ -614,7 +643,8 @@ QPushButton:pressed {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 20px
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
@@ -629,15 +659,41 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="btnListaDoble">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="btnSalir">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+}
+QPushButton:pressed {
+    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Salir</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="btnCola">
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 20px
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
     background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
@@ -648,7 +704,7 @@ QPushButton:pressed {
 </string>
         </property>
         <property name="text">
-         <string>Lista Doble</string>
+         <string>Cola</string>
         </property>
        </widget>
       </item>
