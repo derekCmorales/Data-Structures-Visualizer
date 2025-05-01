@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PilaVisual</class>
- <widget class="QWidget" name="PilaVisual">
+ <class>ColaVisual</class>
+ <widget class="QWidget" name="ColaVisual">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Stack | Pila</string>
+   <string>Queue | Cola</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: white;</string>
@@ -42,7 +42,7 @@
     background-color: transparent;
     font-weight: bold;
     background-image: url(:resources/back_arrow.png);
-	background-size: 40px 40px;
+    background-size: 40px 40px;
 }
 QPushButton:hover {
     background-color: #e0e0e0;
@@ -79,7 +79,7 @@ QPushButton:pressed {
   border: 3px cyan;</string>
        </property>
        <property name="text">
-        <string>Stack | Pila</string>
+        <string>Queue | Cola</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -142,9 +142,9 @@ QPushButton:pressed {
     border: none;
     background-image: url(:/resources/button_default.png);
     background-color: transparent;
-	font-weight: bold;
-	font-size: 15px;
-	border-radius: 2px; padding: 2px; margin: 2px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
     background-image: url(:/resources/button_hover.png);
@@ -166,9 +166,9 @@ QPushButton:pressed {
     border: none;
     background-image: url(:/resources/button_default.png);
     background-color: transparent;
-	font-weight: bold;
-	font-size: 15px;
-	border-radius: 2px; padding: 2px; margin: 2px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
     background-image: url(:/resources/button_hover.png);
@@ -190,9 +190,9 @@ QPushButton:pressed {
     border: none;
     background-image: url(:/resources/button_default.png);
     background-color: transparent;
-	font-weight: bold;
-	font-size: 15px;
-	border-radius: 2px; padding: 2px; margin: 2px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
     background-image: url(:/resources/button_hover.png);
@@ -227,7 +227,7 @@ QPushButton:pressed {
 </string>
        </property>
        <property name="text">
-        <string>Reiniciar</string>
+        <string>Reinciar</string>
        </property>
       </widget>
      </item>
@@ -241,7 +241,7 @@ QPushButton:pressed {
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
-     <widget class="QWidget" name="pilaContainer">
+     <widget class="QWidget" name="colaContainer">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -250,7 +250,7 @@ QPushButton:pressed {
         <height>112</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="layoutPila"/>
+      <layout class="QHBoxLayout" name="layoutCola"/>
      </widget>
     </widget>
    </item>

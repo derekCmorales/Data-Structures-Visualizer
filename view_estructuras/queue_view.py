@@ -5,17 +5,17 @@ from PySide6.QtWidgets import (
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile, Qt, QSize
 from PySide6.QtGui import QFont, QIcon, QColor
-from estructuras.stack import Pila
+from estructuras.queue import Cola
 
 
-class PilaView(QWidget):
+class ColaView(QWidget):
     def __init__(self, main_window=None):
         super().__init__()
         self.main_window = main_window
-        self.pila = Pila()
+        self.cola = Cola()
         self.cargar_ui()
         self.conectar_signals()
-        self.setWindowTitle("Stack | Pila")
+        self.setWindowTitle("Queue | Cola")
         self.setStyleSheet("""
             background-color: white;
             QMessageBox {
@@ -28,7 +28,7 @@ class PilaView(QWidget):
 
     def cargar_ui(self):
         loader = QUiLoader()
-        ui_file = QFile("estructuras_ui/stack_view.ui")
+        ui_file = QFile("estructuras_ui/queue_view.ui")
         if not ui_file.open(QFile.ReadOnly):
             self.mostrar_error("Error", "No se pudo abrir el archivo de UI.")
             return
@@ -56,8 +56,8 @@ class PilaView(QWidget):
             pass
 
         self.scrollArea = self.ui.findChild(QScrollArea, "scrollArea")
-        self.pilaContainer = self.scrollArea.findChild(QWidget, "pilaContainer")
-        self.layoutPila = self.pilaContainer.findChild(QVBoxLayout, "layoutPila")
+        self.colaContainer = self.scrollArea.findChild(QWidget, "colaContainer")
+        self.layoutCola = self.colaContainer.findChild(QHBoxLayout, "layoutCola")
 
     def conectar_signals(self):
         self.btn_insertar.clicked.connect(self.insertar_valor)
@@ -65,32 +65,19 @@ class PilaView(QWidget):
         self.btn_buscar.clicked.connect(self.buscar_valor)
         self.btn_regresar.clicked.connect(self.regresar_dashboard)
         if self.btn_reiniciar:
-            self.btn_reiniciar.clicked.connect(self.reiniciar_pila)
+            self.btn_reiniciar.clicked.connect(self.reiniciar_cola)
 
     def convertir_valor(self, texto):
         texto = texto.strip()
         if not texto:
             raise ValueError("Ingrese un valor")
 
-        # Si la pila no está vacía, validar tipo
-        if not self.pila.esta_vacia():
-            tipo_actual = self.pila.tipo_dato
-
-            # Si el tipo actual es str, verificar si el nuevo valor podría ser otro tipo
+        # Si la cola no está vacía, validar tipo
+        if not self.cola.esta_vacia():
+            tipo_actual = self.cola.tipo_dato
+            # String es el tipo más permisivo
             if tipo_actual == str:
-                # Intentar convertir a otros tipos primero
-                try:
-                    if texto.lower() in ['true', 'false']:
-                        raise ValueError("No se puede mezclar booleanos con strings")
-                    if '.' in texto:
-                        float(texto)  # Verificar si es float
-                        raise ValueError("No se puede mezclar números con strings")
-                    int(texto)  # Verificar si es int
-                    raise ValueError("No se puede mezclar números con strings")
-                except ValueError:
-                    return texto  # Mantener como string si no es convertible a otros tipos
-
-            # Para otros tipos, validar estrictamente
+                return texto
             try:
                 if tipo_actual == bool:
                     if texto.lower() in ['true', 'false']:
@@ -100,7 +87,7 @@ class PilaView(QWidget):
             except ValueError:
                 raise ValueError(f"Ingrese un {tipo_actual.__name__} válido")
 
-        # Si la pila está vacía, determinar tipo
+        # Si la cola está vacía, determinar tipo
         try:
             return int(texto)
         except ValueError:
@@ -115,7 +102,7 @@ class PilaView(QWidget):
         texto = self.input_valor.text()
         try:
             valor = self.convertir_valor(texto)
-            self.pila.insertar(valor)
+            self.cola.insertar(valor)
             self.input_valor.clear()
             self.actualizar_vista()
         except ValueError as e:
@@ -124,11 +111,11 @@ class PilaView(QWidget):
             self.mostrar_error("Error", str(e))
 
     def eliminar_valor(self):
-        if self.pila.esta_vacia():
-            self.mostrar_error("Pila vacía", "No hay elementos para eliminar")
+        if self.cola.esta_vacia():
+            self.mostrar_error("Cola vacía", "No hay elementos para eliminar")
             return
 
-        valor = self.pila.eliminar()
+        valor = self.cola.eliminar()
         self.mostrar_mensaje("Éxito", f"Se eliminó: {valor}")
         self.actualizar_vista()
 
@@ -140,7 +127,7 @@ class PilaView(QWidget):
 
         try:
             valor = self.convertir_valor(texto)
-            pos = self.pila.buscar(valor)
+            pos = self.cola.buscar(valor)
             if pos == -1:
                 self.mostrar_mensaje("Búsqueda", f"Valor '{valor}' no encontrado")
             else:
@@ -148,18 +135,18 @@ class PilaView(QWidget):
         except ValueError as e:
             self.mostrar_error("Error de búsqueda", str(e))
 
-    def reiniciar_pila(self):
-        self.pila.reiniciar()
+    def reiniciar_cola(self):
+        self.cola.reiniciar()
         self.actualizar_vista()
-        self.mostrar_mensaje("Pila reiniciada", "Ahora puede ingresar cualquier tipo de dato")
+        self.mostrar_mensaje("Cola reiniciada", "Ahora puede ingresar cualquier tipo de dato")
 
     def actualizar_vista(self):
-        self.clear_layout(self.layoutPila)
-        elementos = self.pila.obtener_todos()
+        self.clear_layout(self.layoutCola)
+        elementos = self.cola.obtener_todos()
         for valor in elementos:
             nodo_widget = self.crear_widget_nodo(valor)
-            self.layoutPila.addWidget(nodo_widget)
-        self.label_tamaño.setText(f"Tamaño: {self.pila.tamaño}")
+            self.layoutCola.addWidget(nodo_widget)
+        self.label_tamaño.setText(f"Tamaño: {self.cola.tamaño}")
 
     def clear_layout(self, layout):
         while layout.count():

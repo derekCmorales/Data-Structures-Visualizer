@@ -7,11 +7,14 @@ import resources_rc
 
 
 from view_estructuras.stack_view import PilaView
+from view_estructuras.queue_view import ColaView
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.vista_pila = None
+        self.vista_cola = None
 
         ui_path = "mainwindow.ui"
 
@@ -36,9 +39,10 @@ class MainWindow(QMainWindow):
         self.ui.btnListaCircular.clicked.connect(self.show_circular_list_view)
         self.ui.btnArbolBinario.clicked.connect(self.show_binary_tree_view)
         self.ui.btnArbolBusqueda.clicked.connect(self.show_bst_view)
-        self.ui.btnCola.clicked.connect(self.show_cola_view)
+        self.ui.btnCola.clicked.connect(self.show_queue_view)
 
         self.vista_pila = None
+        self.vista_cola = None
 
     def clear_central_layout(self):
         layout = self.ui.centralwidget.layout()
@@ -71,8 +75,13 @@ class MainWindow(QMainWindow):
     def show_bst_view(self):
         print("Mostrar vista de Árbol de Búsqueda")
 
-    def show_cola_view(self):
-        print("Mostrar vista de kolaaaa")
+    def show_queue_view(self):
+        if not self.vista_cola:
+            self.vista_cola = ColaView(main_window=self)
+
+        self.hide()
+        self.vista_cola.show()
+        self.vista_cola.resize(self.size())
 
 
 if __name__ == "__main__":
