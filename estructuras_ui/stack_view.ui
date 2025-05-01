@@ -29,8 +29,8 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>100</width>
+         <height>100</height>
         </size>
        </property>
        <property name="toolTip">
@@ -41,8 +41,8 @@
     border: none;
     background-color: transparent;
     font-weight: bold;
-    qproperty-icon: url(resources/back_arrow.png);
-    qproperty-iconSize: 24px 24px;
+    background-image: url(:resources/back_arrow.png);
+	background-size: 40px 40px;
 }
 QPushButton:hover {
     background-color: #e0e0e0;
@@ -61,7 +61,7 @@ QPushButton:pressed {
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -89,7 +89,7 @@ QPushButton:pressed {
      <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -140,16 +140,17 @@ QPushButton:pressed {
        <property name="styleSheet">
         <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 17px
+	font-size: 15px;
+	border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
        </property>
@@ -163,16 +164,17 @@ QPushButton:pressed {
        <property name="styleSheet">
         <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 17px
+	font-size: 15px;
+	border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
        </property>
@@ -186,16 +188,17 @@ QPushButton:pressed {
        <property name="styleSheet">
         <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
-	font-size: 17px
+	font-size: 15px;
+	border-radius: 2px; padding: 2px; margin: 2px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
        </property>
@@ -220,7 +223,7 @@ QPushButton:pressed {
         <x>0</x>
         <y>0</y>
         <width>683</width>
-        <height>142</height>
+        <height>127</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="layoutPila"/>
@@ -229,6 +232,8 @@ QPushButton:pressed {
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

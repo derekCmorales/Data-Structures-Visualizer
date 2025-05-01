@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>646</height>
+    <width>698</width>
+    <height>767</height>
    </rect>
   </property>
   <property name="palette">
@@ -520,17 +520,17 @@
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -544,17 +544,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -568,17 +568,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -592,17 +592,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -616,17 +616,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -640,17 +640,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -664,18 +664,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
-
+    background-image: url(:/resources/button_hover.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 </string>
         </property>
@@ -689,17 +688,17 @@ QPushButton:pressed {
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);
+    background-image: url(:/resources/button_hover.png);
 }
 QPushButton:pressed {
-    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);
+    background-image: url(:/resources/button_default.png);
 }
 </string>
         </property>
@@ -713,6 +712,8 @@ QPushButton:pressed {
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

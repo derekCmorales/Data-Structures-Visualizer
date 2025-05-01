@@ -3,6 +3,8 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile, QIODevice
 import sys
 import os
+import resources_rc
+
 
 from view_estructuras.stack_view import PilaView
 

@@ -16,13 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
-    QPushButton, QSizePolicy, QVBoxLayout, QWidget)
+    QPushButton, QSizePolicy, QWidget)
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(958, 678)
+        MainWindow.resize(698, 767)
         palette = QPalette()
         brush = QBrush(QColor(0, 0, 0, 255))
         brush.setStyle(Qt.BrushStyle.SolidPattern)
@@ -105,57 +106,40 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet(u"background-color: white;")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.mainLayout = QVBoxLayout(self.centralwidget)
-        self.mainLayout.setObjectName(u"mainLayout")
+        self.centralwidget.setStyleSheet(u"")
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.labelLogo = QLabel(self.centralwidget)
         self.labelLogo.setObjectName(u"labelLogo")
         self.labelLogo.setPixmap(QPixmap(u"resources/logo.png"))
         self.labelLogo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.mainLayout.addWidget(self.labelLogo)
+        self.gridLayout.addWidget(self.labelLogo, 0, 0, 1, 1)
 
         self.labelTitulo = QLabel(self.centralwidget)
         self.labelTitulo.setObjectName(u"labelTitulo")
         self.labelTitulo.setStyleSheet(u"font-size: 25px; font-weight: bold; color: #2e3e97")
         self.labelTitulo.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.mainLayout.addWidget(self.labelTitulo)
+        self.gridLayout.addWidget(self.labelTitulo, 1, 0, 1, 1)
 
         self.gridLayoutBotones = QGridLayout()
         self.gridLayoutBotones.setObjectName(u"gridLayoutBotones")
-        self.btnListaSimple = QPushButton(self.centralwidget)
-        self.btnListaSimple.setObjectName(u"btnListaSimple")
-        self.btnListaSimple.setStyleSheet(u"QPushButton {\n"
-"    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
-"    background-color: transparent;\n"
-"	font-weight: bold;\n"
-"	font-size: 20px\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
-"}\n"
-"QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
-"}\n"
-"")
-
-        self.gridLayoutBotones.addWidget(self.btnListaSimple, 0, 1, 1, 1)
-
         self.btnArbolBinario = QPushButton(self.centralwidget)
         self.btnArbolBinario.setObjectName(u"btnArbolBinario")
         self.btnArbolBinario.setStyleSheet(u"QPushButton {\n"
 "    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "    background-color: transparent;\n"
 "	font-weight: bold;\n"
-"	font-size: 20px\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "}\n"
 "")
 
@@ -165,38 +149,78 @@ class Ui_MainWindow(object):
         self.btnListaCircular.setObjectName(u"btnListaCircular")
         self.btnListaCircular.setStyleSheet(u"QPushButton {\n"
 "    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "    background-color: transparent;\n"
 "	font-weight: bold;\n"
-"	font-size: 20px\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "}\n"
 "")
 
-        self.gridLayoutBotones.addWidget(self.btnListaCircular, 1, 1, 1, 1)
+        self.gridLayoutBotones.addWidget(self.btnListaCircular, 1, 2, 1, 1)
+
+        self.btnListaDoble = QPushButton(self.centralwidget)
+        self.btnListaDoble.setObjectName(u"btnListaDoble")
+        self.btnListaDoble.setStyleSheet(u"QPushButton {\n"
+"    border: none;\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"    background-color: transparent;\n"
+"	font-weight: bold;\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-image: url(:/resources/button_hover.png);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"}\n"
+"")
+
+        self.gridLayoutBotones.addWidget(self.btnListaDoble, 1, 0, 1, 1)
+
+        self.btnListaSimple = QPushButton(self.centralwidget)
+        self.btnListaSimple.setObjectName(u"btnListaSimple")
+        self.btnListaSimple.setStyleSheet(u"QPushButton {\n"
+"    border: none;\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"    background-color: transparent;\n"
+"	font-weight: bold;\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-image: url(:/resources/button_hover.png);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"}\n"
+"")
+
+        self.gridLayoutBotones.addWidget(self.btnListaSimple, 0, 2, 1, 1)
 
         self.btnPila = QPushButton(self.centralwidget)
         self.btnPila.setObjectName(u"btnPila")
         self.btnPila.setStyleSheet(u"QPushButton {\n"
 "    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "    background-color: transparent;\n"
 "	font-weight: bold;\n"
-"	font-size: 20px\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "}\n"
-"\n"
-"\n"
 "")
 
         self.gridLayoutBotones.addWidget(self.btnPila, 0, 0, 1, 1)
@@ -205,42 +229,64 @@ class Ui_MainWindow(object):
         self.btnArbolBusqueda.setObjectName(u"btnArbolBusqueda")
         self.btnArbolBusqueda.setStyleSheet(u"QPushButton {\n"
 "    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "    background-color: transparent;\n"
 "	font-weight: bold;\n"
-"	font-size: 20px\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "}\n"
 "")
 
-        self.gridLayoutBotones.addWidget(self.btnArbolBusqueda, 2, 1, 1, 1)
+        self.gridLayoutBotones.addWidget(self.btnArbolBusqueda, 2, 2, 1, 1)
 
-        self.btnListaDoble = QPushButton(self.centralwidget)
-        self.btnListaDoble.setObjectName(u"btnListaDoble")
-        self.btnListaDoble.setStyleSheet(u"QPushButton {\n"
+        self.btnSalir = QPushButton(self.centralwidget)
+        self.btnSalir.setObjectName(u"btnSalir")
+        self.btnSalir.setStyleSheet(u"QPushButton {\n"
 "    border: none;\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "    background-color: transparent;\n"
 "	font-weight: bold;\n"
-"	font-size: 20px\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_hover.png);\n"
+"    background-image: url(:/resources/button_default.png);\n"
 "}\n"
 "QPushButton:pressed {\n"
-"    background-image: url(/Users/derekmorales/DEREK-PROJECTS/DSV/DataVisualizer/resources/button_default.png);\n"
+"    background-image: url(:/resources/button_hover.png);\n"
 "}\n"
 "")
 
-        self.gridLayoutBotones.addWidget(self.btnListaDoble, 1, 0, 1, 1)
+        self.gridLayoutBotones.addWidget(self.btnSalir, 3, 2, 1, 1)
+
+        self.btnCola = QPushButton(self.centralwidget)
+        self.btnCola.setObjectName(u"btnCola")
+        self.btnCola.setStyleSheet(u"QPushButton {\n"
+"    border: none;\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"    background-color: transparent;\n"
+"	font-weight: bold;\n"
+"	font-size: 20px;\n"
+"	 border-radius: 3px; padding: 3px; margin: 3px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-image: url(:/resources/button_hover.png);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-image: url(:/resources/button_default.png);\n"
+"}\n"
+"")
+
+        self.gridLayoutBotones.addWidget(self.btnCola, 3, 0, 1, 1)
 
 
-        self.mainLayout.addLayout(self.gridLayoutBotones)
+        self.gridLayout.addLayout(self.gridLayoutBotones, 2, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -252,11 +298,13 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Visualizer de Estructuras de Datos", None))
         self.labelTitulo.setText(QCoreApplication.translate("MainWindow", u"Selecciona una estructura de datos", None))
-        self.btnListaSimple.setText(QCoreApplication.translate("MainWindow", u"Lista Simple", None))
         self.btnArbolBinario.setText(QCoreApplication.translate("MainWindow", u"\u00c1rbol Binario", None))
         self.btnListaCircular.setText(QCoreApplication.translate("MainWindow", u"Lista Circular", None))
+        self.btnListaDoble.setText(QCoreApplication.translate("MainWindow", u"Lista Doble", None))
+        self.btnListaSimple.setText(QCoreApplication.translate("MainWindow", u"Lista Simple", None))
         self.btnPila.setText(QCoreApplication.translate("MainWindow", u"Pila", None))
         self.btnArbolBusqueda.setText(QCoreApplication.translate("MainWindow", u"\u00c1rbol de B\u00fasqueda", None))
-        self.btnListaDoble.setText(QCoreApplication.translate("MainWindow", u"Lista Doble", None))
+        self.btnSalir.setText(QCoreApplication.translate("MainWindow", u"Salir", None))
+        self.btnCola.setText(QCoreApplication.translate("MainWindow", u"Cola", None))
     # retranslateUi
 
