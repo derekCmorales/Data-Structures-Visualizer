@@ -4,5 +4,7 @@
     <file>resources/button_hover.png</file>
     <file>resources/logo.png</file>
     <file>resources/back_arrow.png</file>
+    <file>resources/upload.png</file>
+
   </qresource>
 </RCC>

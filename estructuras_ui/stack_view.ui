@@ -99,6 +99,36 @@ QPushButton:pressed {
        </property>
       </spacer>
      </item>
+     <item>
+      <widget class="QPushButton" name="btnGuardar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 10px;
+	border-radius: 2px; padding: 2px; margin: 2px;
+}
+QPushButton:hover {
+    background-image: url(:/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(:/resources/button_default.png);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Descargar</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -247,7 +277,7 @@ QPushButton:pressed {
         <x>0</x>
         <y>0</y>
         <width>683</width>
-        <height>112</height>
+        <height>124</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="layoutPila"/>

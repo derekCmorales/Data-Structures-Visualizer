@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import (
     QWidget, QScrollArea, QLineEdit, QPushButton, QLabel,
-    QVBoxLayout, QHBoxLayout, QFrame, QMessageBox
+    QVBoxLayout, QHBoxLayout, QFrame, QMessageBox, QFileDialog
 )
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile, Qt, QSize
@@ -46,8 +46,8 @@ class PilaView(QWidget):
         self.btn_eliminar = self.ui.findChild(QPushButton, "btn_eliminar")
         self.btn_buscar = self.ui.findChild(QPushButton, "btn_buscar")
         self.btn_regresar = self.ui.findChild(QPushButton, "btn_regresar")
-        self.btn_reiniciar = self.ui.findChild(QPushButton, "btn_reiniciar") if hasattr(self.ui,
-                                                                                        'btn_reiniciar') else None
+        self.btn_reiniciar = self.ui.findChild(QPushButton, "btn_reiniciar")
+        self.btn_guardar = self.ui.findChild(QPushButton, "btnGuardar")
 
         try:
             self.btn_regresar.setIcon(QIcon("resources/back_arrow.png"))
@@ -64,8 +64,22 @@ class PilaView(QWidget):
         self.btn_eliminar.clicked.connect(self.eliminar_valor)
         self.btn_buscar.clicked.connect(self.buscar_valor)
         self.btn_regresar.clicked.connect(self.regresar_dashboard)
-        if self.btn_reiniciar:
-            self.btn_reiniciar.clicked.connect(self.reiniciar_pila)
+        self.btn_reiniciar.clicked.connect(self.reiniciar_pila)
+        self.btn_guardar.clicked.connect(self.guardar_pila)
+
+    def guardar_pila(self):
+        filename, _ = QFileDialog.getSaveFileName(
+            self, "Guardar Pila", "", "JSON Files (*.json)")
+
+        if filename:
+            if not filename.endswith('.json'):
+                filename += '.json'
+
+            try:
+                self.pila.guardar_a_archivo(filename)
+                self.mostrar_mensaje("Éxito", f"Pila guardada en {filename}")
+            except Exception as e:
+                self.mostrar_error("Error", f"No se pudo guardar: {str(e)}")
 
     def convertir_valor(self, texto):
         texto = texto.strip()

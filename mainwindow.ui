@@ -500,90 +500,29 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="labelTitulo">
-      <property name="styleSheet">
-       <string notr="true">font-size: 25px; font-weight: bold; color: #2e3e97</string>
-      </property>
-      <property name="text">
-       <string>Selecciona una estructura de datos</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
+    <item row="4" column="0">
      <layout class="QGridLayout" name="gridLayoutBotones">
-      <item row="2" column="0">
-       <widget class="QPushButton" name="btnArbolBinario">
+      <item row="3" column="2">
+       <widget class="QPushButton" name="btnSalir">
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
-    background-image: url(:/resources/button_default.png);
+    background-image: url(:/resources/button_hover.png);
     background-color: transparent;
 	font-weight: bold;
 	font-size: 20px;
 	 border-radius: 3px; padding: 3px; margin: 3px;
 }
 QPushButton:hover {
-    background-image: url(:/resources/button_hover.png);
+    background-image: url(:/resources/button_default.png);
 }
 QPushButton:pressed {
-    background-image: url(:/resources/button_default.png);
+    background-image: url(:/resources/button_hover.png);
 }
 </string>
         </property>
         <property name="text">
-         <string>Árbol Binario</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="btnListaCircular">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: none;
-    background-image: url(:/resources/button_default.png);
-    background-color: transparent;
-	font-weight: bold;
-	font-size: 20px;
-	 border-radius: 3px; padding: 3px; margin: 3px;
-}
-QPushButton:hover {
-    background-image: url(:/resources/button_hover.png);
-}
-QPushButton:pressed {
-    background-image: url(:/resources/button_default.png);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Lista Circular</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="btnListaDoble">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: none;
-    background-image: url(:/resources/button_default.png);
-    background-color: transparent;
-	font-weight: bold;
-	font-size: 20px;
-	 border-radius: 3px; padding: 3px; margin: 3px;
-}
-QPushButton:hover {
-    background-image: url(:/resources/button_hover.png);
-}
-QPushButton:pressed {
-    background-image: url(:/resources/button_default.png);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Lista Doble</string>
+         <string>Salir</string>
         </property>
        </widget>
       </item>
@@ -611,8 +550,8 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="btnPila">
+      <item row="2" column="0">
+       <widget class="QPushButton" name="btnArbolBinario">
         <property name="styleSheet">
          <string notr="true">QPushButton {
     border: none;
@@ -631,7 +570,7 @@ QPushButton:pressed {
 </string>
         </property>
         <property name="text">
-         <string>Pila</string>
+         <string>Árbol Binario</string>
         </property>
        </widget>
       </item>
@@ -659,30 +598,6 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="btnSalir">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    border: none;
-    background-image: url(:/resources/button_hover.png);
-    background-color: transparent;
-	font-weight: bold;
-	font-size: 20px;
-	 border-radius: 3px; padding: 3px; margin: 3px;
-}
-QPushButton:hover {
-    background-image: url(:/resources/button_default.png);
-}
-QPushButton:pressed {
-    background-image: url(:/resources/button_hover.png);
-}
-</string>
-        </property>
-        <property name="text">
-         <string>Salir</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <widget class="QPushButton" name="btnCola">
         <property name="styleSheet">
@@ -707,7 +622,117 @@ QPushButton:pressed {
         </property>
        </widget>
       </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="btnPila">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(:/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(:/resources/button_default.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Pila</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btnListaDoble">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(:/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(:/resources/button_default.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Lista Doble</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btnListaCircular">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/button_default.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 20px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(:/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(:/resources/button_default.png);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Lista Circular</string>
+        </property>
+       </widget>
+      </item>
      </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelTitulo">
+      <property name="styleSheet">
+       <string notr="true">font-size: 25px; font-weight: bold; color: #2e3e97</string>
+      </property>
+      <property name="text">
+       <string>Selecciona una estructura de datos</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="btnCargar">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/button_default.png);
+	Qproperty-icon: url(:/resources/upload.png);
+    background-color: transparent;
+	font-weight: bold;
+	font-size: 12px;
+	 border-radius: 3px; padding: 3px; margin: 3px;
+}
+QPushButton:hover {
+    background-image: url(:/resources/button_hover.png);
+}
+QPushButton:pressed {
+    background-image: url(:/resources/button_default.png);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Cargar JSON</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
