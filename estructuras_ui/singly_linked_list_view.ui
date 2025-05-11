@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ListaSimpleView</class>
+ <widget class="QWidget" name="ListaSimpleView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lista Simplemente Enlazada</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <layout class="QHBoxLayout" name="contenedor">
+     <item>
+      <widget class="QPushButton" name="btn_regresar">
+       <property name="minimumSize">
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    border: none;
+    background-image: url(:/resources/back_arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 24px;
+}
+QPushButton:hover {
+    background-color: #e9ecef;
+}
+QPushButton:pressed {
+    background-color: #dee2e6;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_title">
+       <property name="styleSheet">
+        <string notr="true">font: 700 28pt &quot;Segoe UI&quot;;
+color: #ffffff;
+background-color: #2b2d42;
+padding: 15px 40px;
+border-radius: 20px;
+border: 3px solid #8d99ae;</string>
+       </property>
+       <property name="text">
+        <string>LISTA SIMPLEMENTE ENLAZADA</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_guardar">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font: 700 12pt &quot;Segoe UI&quot;;
+    padding: 12px;
+}
+QPushButton:hover {
+    background-color: #21867a;
+    padding: 10px;
+}
+QPushButton:pressed {
+    background-color: #1a6b5f;
+}</string>
+       </property>
+       <property name="text">
+        <string>GUARDAR</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_cargar">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font: 700 12pt &quot;Segoe UI&quot;;
+    padding: 12px;
+}
+QPushButton:hover {
+    background-color: #d1583a;
+    padding: 10px;
+}
+QPushButton:pressed {
+    background-color: #b2492f;
+}</string>
+       </property>
+       <property name="text">
+        <string>CARGAR</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="infoFrame">
+     <property name="styleSheet">
+      <string notr="true">background-color: #edf2f4;
+border-radius: 15px;
+padding: 15px;</string>
+     </property>
+     <layout class="QHBoxLayout" name="infoLayout">
+      <item>
+       <widget class="QLabel" name="lbl_tamaño">
+        <property name="styleSheet">
+         <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+color: #2b2d42;
+background-color: #a8dadc;
+padding: 10px 20px;
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string>Tamaño: 0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_tipo">
+        <property name="styleSheet">
+         <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+color: #2b2d42;
+background-color: #f4a261;
+padding: 10px 20px;
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string>Tipo: -</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_cabeza">
+        <property name="styleSheet">
+         <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+color: #2b2d42;
+background-color: #84a59d;
+padding: 10px 20px;
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string>Cabeza: -</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_cola">
+        <property name="styleSheet">
+         <string notr="true">font: 700 14pt &quot;Segoe UI&quot;;
+color: #2b2d42;
+background-color: #e9c46a;
+padding: 10px 20px;
+border-radius: 10px;</string>
+        </property>
+        <property name="text">
+         <string>Cola: -</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="controlFrame">
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;
+border-radius: 20px;
+padding: 20px;</string>
+     </property>
+     <layout class="QVBoxLayout" name="controlLayout">
+      <item>
+       <widget class="QLineEdit" name="input_valor">
+        <property name="styleSheet">
+         <string notr="true">font: 16pt &quot;Segoe UI&quot;;
+border: 2px solid #8d99ae;
+border-radius: 12px;
+padding: 12px;
+color: #2b2d42;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Ingrese un valor...</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="buttonLayout">
+        <item>
+         <widget class="QPushButton" name="btn_insertar_inicio">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #457b9d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #3a6a8a;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #2f556e;
+}</string>
+          </property>
+          <property name="text">
+           <string>Insertar al Inicio</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_insertar_final">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #588157;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #476646;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #364d35;
+}</string>
+          </property>
+          <property name="text">
+           <string>Insertar al Final</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_eliminar_inicio">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #c5303a;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #a3262f;
+}</string>
+          </property>
+          <property name="text">
+           <string>Eliminar Inicio</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_eliminar_final">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #ff9f1c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #e08d17;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #c27a13;
+}</string>
+          </property>
+          <property name="text">
+           <string>Eliminar Final</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="actionLayout">
+        <item>
+         <widget class="QPushButton" name="btn_buscar">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #7209b7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #5e079c;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #4a067f;
+}</string>
+          </property>
+          <property name="text">
+           <string>Buscar Valor</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_reiniciar">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #6d6875;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font: 700 14pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover {
+    background-color: #5a5660;
+    padding: 13px;
+}
+QPushButton:pressed {
+    background-color: #47444b;
+}</string>
+          </property>
+          <property name="text">
+           <string>Reiniciar Lista</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">border: none;
+background: transparent;</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="contenedorLista">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1000</width>
+        <height>322</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <layout class="QHBoxLayout" name="listaLayout">
+       <property name="spacing">
+        <number>30</number>
+       </property>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

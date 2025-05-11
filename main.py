@@ -5,11 +5,16 @@ import sys
 import os
 import resources_rc
 import json
-
+from view_estructuras.singly_linked_list_view import ListaSimpleView
 from view_estructuras.stack_view import PilaView
 from view_estructuras.queue_view import ColaView
 from estructuras.stack import Pila
 from estructuras.queue import Cola
+from estructuras.singly_linked_list import ListaSimple
+from view_estructuras.doubly_linked_list_view import ListaDobleView
+from view_estructuras.circular_list_view import ListaCircularView
+from estructuras.circular_linked_list import ListaCircular
+
 
 
 class MainWindow(QMainWindow):
@@ -19,6 +24,9 @@ class MainWindow(QMainWindow):
         # Inicializar variables de vista
         self.vista_pila = None
         self.vista_cola = None
+        self.vista_lista_simple = None
+        self.vista_lista_doble = None
+        self.vista_lista_circular = None
 
         # Cargar la interfaz
         self.cargar_interfaz()
@@ -74,13 +82,27 @@ class MainWindow(QMainWindow):
         self.vista_pila.resize(self.size())
 
     def show_singly_linked_list_view(self):
-        print("Mostrar vista de Lista Simple")
+        if not self.vista_lista_simple:
+            self.vista_lista_simple = ListaSimpleView(main_window=self)
 
+        self.hide()
+        self.vista_lista_simple.show()
+        self.vista_lista_simple.resize(self.size())
     def show_doubly_linked_list_view(self):
-        print("Mostrar vista de Lista Doble")
+        if not self.vista_lista_doble:
+            self.vista_lista_doble = ListaDobleView(main_window=self)
+
+        self.hide()
+        self.vista_lista_doble.show()
+        self.vista_lista_doble.resize(self.size())
 
     def show_circular_list_view(self):
-        print("Mostrar vista de Lista Circular")
+        if not self.vista_lista_circular:
+            self.vista_lista_circular = ListaCircularView(main_window=self)
+
+        self.hide()
+        self.vista_lista_circular.show()
+        self.vista_lista_circular.resize(self.size())
 
     def show_binary_tree_view(self):
         print("Mostrar vista de Árbol Binario")
@@ -139,7 +161,6 @@ class MainWindow(QMainWindow):
         msg.setWindowTitle(titulo)
         msg.setText(mensaje)
         msg.exec()
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
